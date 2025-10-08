@@ -46,10 +46,10 @@
       "prettier --write"
     ],
     "apps/**/*.{css,scss,md,json}": [
-      "prettier --write --ignore-path .gitignore"
+      "prettier --write"
     ],
     "packages/**/*.{css,scss,md,json}": [
-      "prettier --write --ignore-path .gitignore"
+      "prettier --write"
     ]
   }
 }
