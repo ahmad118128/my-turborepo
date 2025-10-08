@@ -37,11 +37,15 @@
     "node": ">=18"
   },
   "lint-staged": {
-    "src/**/*.{js,ts,tsx,jsx}": [
+    "apps/**/*.{js,ts,tsx,jsx}": [
       "eslint --fix",
       "prettier --write"
     ],
-    "src/**/*.{css,scss,md,json}": [
+    "packages/**/*.{js,ts,tsx,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "**/*.{css,scss,md,json}": [
       "prettier --write"
     ]
   }
