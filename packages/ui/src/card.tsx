@@ -1,5 +1,5 @@
 import { type ReactNode } from "react";
-
+// test lint staged
 export function Card({
   title,
   children,
