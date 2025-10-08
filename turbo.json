@@ -32,6 +32,10 @@
     },
     "transit": {
       "dependsOn": ["^transit"]
+    },
+    "e2e": {
+      "dependsOn": ["^build"],
+      "passThroughEnv": ["PLAYWRIGHT_*"]
     }
   }
 }

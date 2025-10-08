@@ -56,3 +56,35 @@ This Turborepo has some additional tools already setup for you:
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
+
+pnpm --filter @repo/playwright-config run build
+
+#### Build And Running E2E Tests with Playwright
+
+This project uses [Playwright](https://playwright.dev/) for end-to-end testing.
+
+```bash
+## build @repo/playwright-config
+pnpm --filter @repo/playwright-config run build
+
+# Install Playwright Browsers
+# After installing dependencies, you need to download the browser binaries:
+
+pnpm exec playwright install
+
+## Running e2e Tests with playwright
+pnpm run e2e
+
+
+## Show reports e2e Tests with playwright
+pnpm exec playwright show-report
+```
+
+##### Running Unit Tests with Vitest
+
+This project uses [Vitest](https://vitest.dev/) for unit testing.
+To run tests in all packages/apps using Turborepo caching:
+
+```bash
+pnpm test
+```
