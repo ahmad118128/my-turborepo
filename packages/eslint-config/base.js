@@ -37,6 +37,7 @@ export const config = [
       // General good practices
       eqeqeq: ["error", "always"],
       "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
+      "max-lines": ["error", { max: 200, skipBlankLines: true, skipComments: true }],
     },
   },
   {
