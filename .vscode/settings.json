@@ -8,10 +8,10 @@
     "source.fixAll.eslint": "always",
     "source.organizeImports": "always"
   },
-  "eslint.validate": [
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "javascriptreact"
-  ]
+  "eslint.validate": ["javascript", "typescript", "typescriptreact", "javascriptreact"],
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.printWidth": 100,
+  "prettier.requireConfig": true,
+  "prettier.configPath": "./prettier.config.cjs"
 }
