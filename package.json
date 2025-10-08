@@ -9,9 +9,14 @@
     "lint:fix": "turbo run lint:fix",
     "check-types": "turbo run check-types",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "test": "turbo run test",
+    "test:projects": "vitest run",
+    "test:projects:watch": "vitest --watch",
+    "view-report": "turbo run view-report",
     "prepare": "husky"
   },
   "devDependencies": {
+    "@repo/vitest-config": "workspace:*",
     "@eslint/js": "^9.37.0",
     "@next/eslint-plugin-next": "^15.4.6",
     "eslint": "^9.37.0",
@@ -31,7 +36,8 @@
     "prettier": "^3.6.0",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "turbo": "^2.5.8",
-    "typescript-eslint": "^8.46.0"
+    "typescript-eslint": "^8.46.0",
+    "vitest": "^3.2.4"
   },
   "packageManager": "pnpm@8.15.6",
   "engines": {

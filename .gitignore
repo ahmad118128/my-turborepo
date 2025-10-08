@@ -7,6 +7,8 @@ node_modules
 
 # testing
 coverage
+coverage/
+
 
 # next.js
 .next/
@@ -34,3 +36,5 @@ yarn-error.log*
 
 # ui
 dist/
+**/dist/
+
