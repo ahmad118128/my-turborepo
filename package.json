@@ -37,16 +37,19 @@
     "node": ">=18"
   },
   "lint-staged": {
-    "apps/**/*.{js,ts,tsx,jsx}": [
+    "apps/**/src/**/*.{js,ts,tsx,jsx}": [
       "eslint --fix",
       "prettier --write"
     ],
-    "packages/**/*.{js,ts,tsx,jsx}": [
+    "packages/**/src/**/*.{js,ts,tsx,jsx}": [
       "eslint --fix",
       "prettier --write"
     ],
-    "**/*.{css,scss,md,json}": [
-      "prettier --write"
+    "apps/**/*.{css,scss,md,json}": [
+      "prettier --write --ignore-path .gitignore"
+    ],
+    "packages/**/*.{css,scss,md,json}": [
+      "prettier --write --ignore-path .gitignore"
     ]
   }
 }
