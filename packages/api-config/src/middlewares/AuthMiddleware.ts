@@ -1,7 +1,8 @@
-import axios, { AxiosError, InternalAxiosRequestConfig } from 'axios';
+import type { AxiosError, InternalAxiosRequestConfig } from 'axios';
+import axios from 'axios';
 import { destroyCookie, parseCookies, setCookie } from 'nookies';
 
-import { IMiddleware } from './interface';
+import type { IMiddleware } from './interface';
 
 /**
  * Authentication middleware for handling JWT token refresh and authentication headers

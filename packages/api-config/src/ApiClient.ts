@@ -1,11 +1,7 @@
-import axios, {
-  AxiosInstance,
-  AxiosRequestConfig,
-  AxiosResponse,
-  CreateAxiosDefaults,
-} from 'axios';
+import type { AxiosInstance, AxiosRequestConfig, AxiosResponse, CreateAxiosDefaults } from 'axios';
+import axios from 'axios';
 
-import { IMiddleware } from './middlewares/interface';
+import type { IMiddleware } from './middlewares/interface';
 
 /**
  * A customizable HTTP client built on Axios with middleware support

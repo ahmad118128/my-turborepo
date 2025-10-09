@@ -1,5 +1,7 @@
-import { IMiddleware } from '@repo/api-config';
-import axios, { AxiosError, AxiosRequestHeaders, InternalAxiosRequestConfig } from 'axios';
+import type { IMiddleware } from '@repo/api-config';
+import type { AxiosError, AxiosRequestHeaders, InternalAxiosRequestConfig } from 'axios';
+import axios from 'axios';
+
 import { destroyCookie, parseCookies, setCookie } from 'nookies';
 
 type FailedRequest = {

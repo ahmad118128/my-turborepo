@@ -22,8 +22,11 @@ export default abstract class AbstractAPI {
    * @param url - The base URL endpoint for this API service (e.g., '/users', '/products')
    * @param http - The HTTP client instance for making API requests
    */
-  protected constructor(
-    protected readonly url: string,
-    protected readonly http: ApiClient,
-  ) {}
+  protected url: string;
+  protected http: ApiClient;
+
+  constructor(url: string, http: ApiClient) {
+    this.url = url;
+    this.http = http;
+  }
 }

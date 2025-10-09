@@ -33,4 +33,5 @@ export const baseURL = createBaseURL();
 export const defaultClient = createDefaultClient();
 
 // Export core classes and interfaces for custom implementations
-export { AbstractAPI, ApiClient, AuthMiddleware, IMiddleware };
+export { AbstractAPI, ApiClient, AuthMiddleware };
+export type { IMiddleware };
