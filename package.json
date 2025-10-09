@@ -19,6 +19,7 @@
     "@eslint/js": "^9.37.0",
     "@next/eslint-plugin-next": "^15.4.6",
     "@repo/vitest-config": "workspace:*",
+    "@repo/eslint-config": "workspace:*",
     "eslint": "^9.37.0",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-import": "^2.32.0",
