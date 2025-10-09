@@ -1,0 +1,30 @@
+{
+  "name": "@repo/api-config",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "types": "./src/index.ts"
+    }
+  },
+  "peerDependencies": {
+    "axios": "workspace:*",
+    "nookies": "workspace:*"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "axios": "^1.6.0",
+    "nookies": "^2.5.2",
+    "eslint": "^9.33.0",
+    "typescript": "^5.9.2"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix"
+  }
+}
