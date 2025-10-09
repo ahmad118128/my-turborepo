@@ -150,6 +150,12 @@ importers:
 
   apps/react-app:
     dependencies:
+      axios:
+        specifier: ^1.4.0
+        version: 1.12.2
+      nookies:
+        specifier: ^2.5.2
+        version: 2.5.2
       react:
         specifier: ^19.1.1
         version: 19.2.0
@@ -160,6 +166,9 @@ importers:
       '@eslint/js':
         specifier: ^9.36.0
         version: 9.37.0
+      '@repo/api-config':
+        specifier: workspace:*
+        version: link:../../packages/api-config
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config

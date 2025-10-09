@@ -14,13 +14,16 @@
   },
   "dependencies": {
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "axios": "^1.4.0",
+    "nookies": "^2.5.2"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
     "@repo/eslint-config": "workspace:*",
     "@repo/tailwind-config": "workspace:*",
     "@repo/vitest-config": "workspace:*",
+    "@repo/api-config": "workspace:*",
     "@eslint/js": "^9.36.0",
     "@types/node": "^24.6.0",
     "@types/react": "^19.1.16",
