@@ -2,10 +2,10 @@ export const sharedConfig = {
   test: {
     globals: true,
     coverage: {
-      provider: "istanbul" as const,
+      provider: 'istanbul' as const,
       reporter: [
         [
-          "json",
+          'json',
           {
             file: `../coverage.json`,
           },

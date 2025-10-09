@@ -10,4 +10,4 @@ export function Button({ children, ...other }: ButtonProps) {
   );
 }
 
-Button.displayName = "Button";
+Button.displayName = 'Button';

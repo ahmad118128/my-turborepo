@@ -6,5 +6,5 @@ export default defineConfig({
   test: {
     ...sharedConfig.test,
     // Package-specific overrides if needed
-  }
+  },
 });
