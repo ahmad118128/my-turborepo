@@ -1,6 +1,7 @@
 import { Card } from '@repo/ui/card';
 import { Gradient } from '@repo/ui/gradient';
 import { TurborepoLogo } from '@repo/ui/turborepo-logo';
+import UserApiTest from 'components/UserApiTest';
 import Image from 'next/image';
 
 const LINKS = [
@@ -30,6 +31,7 @@ export default function Page() {
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <UserApiTest />
         <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
           <p className="fixed left-0 top-0 flex w-full justify-center border border-neutral-800 from-inherit px-4 pb-6 pt-8 backdrop-blur-2xl lg:static lg:w-auto lg:rounded-xl lg:p-4">
             examples/with-tailwind -&nbsp;

@@ -83,9 +83,15 @@ importers:
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      axios:
+        specifier: ^1.4.0
+        version: 1.12.2
       next:
         specifier: ^15.4.2
         version: 15.5.4(@playwright/test@1.56.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      nookies:
+        specifier: ^2.5.2
+        version: 2.5.2
       react:
         specifier: ^19.1.0
         version: 19.2.0
@@ -99,6 +105,9 @@ importers:
       '@playwright/test':
         specifier: ^1.56.0
         version: 1.56.0
+      '@repo/api-config':
+        specifier: workspace:*
+        version: link:../../packages/api-config
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
