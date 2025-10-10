@@ -1,17 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useState } from 'react';
 
-import ProductsService from '../services/apis/products.service';
-
-interface User {
-  id: string;
-  title: string;
-  price: string;
-}
+import ProductsService, { type Products } from '../services/apis/products.service';
 
 const productsService = new ProductsService();
 
 const ProductsApiTest: React.FC = () => {
-  const [products, setProducts] = useState<User[]>([]);
+  const [products, setProducts] = useState<Products[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 

@@ -1,8 +1,10 @@
 import '@repo/ui/styles.css';
 import './globals.css';
 
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import type { Metadata } from 'next';
 import { Geist } from 'next/font/google';
+import { ReactQueryProvider } from 'services/react-query/query-provider';
 
 const geist = Geist({ subsets: ['latin'] });
 
@@ -14,7 +16,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={geist.className}>{children}</body>
+      <ReactQueryProvider>
+        <body className={geist.className}>{children}</body>
+        <ReactQueryDevtools initialIsOpen={false} />
+      </ReactQueryProvider>
     </html>
   );
 }

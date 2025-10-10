@@ -4,6 +4,8 @@ import { destroyCookie, parseCookies, setCookie } from 'nookies';
 
 import type { IMiddleware } from './interface';
 
+export const ACCESS_TOKEN_KEY = 'access_token';
+export const REFRESH_TOKEN_KEY = 'refresh_token';
 /**
  * Authentication middleware for handling JWT token refresh and authentication headers
  * Implements automatic token refresh on 401 errors and manages request queuing during refresh
@@ -44,7 +46,7 @@ export default class AuthMiddleware implements IMiddleware {
    */
   async onRequest(config: InternalAxiosRequestConfig) {
     const cookies = parseCookies();
-    const token = cookies.token;
+    const token = cookies[ACCESS_TOKEN_KEY];
     // Add Bearer token to request header if available
     if (token && config.headers) config.headers.Authorization = `Bearer ${token}`;
     return config;
@@ -64,11 +66,11 @@ export default class AuthMiddleware implements IMiddleware {
     if (error.response?.status === 401 && !(originalRequest as any)._retry) {
       (originalRequest as any)._retry = true;
       const cookies = parseCookies();
-      const refreshToken = cookies.refreshToken;
+      const refreshToken = cookies[REFRESH_TOKEN_KEY];
 
       // If no refresh token available, clear tokens and redirect to fallback
       if (!refreshToken) {
-        destroyCookie(null, 'token');
+        destroyCookie(null, ACCESS_TOKEN_KEY);
         window.location.replace(`${window.location.origin}${fallback}`);
         return;
       }
@@ -92,23 +94,25 @@ export default class AuthMiddleware implements IMiddleware {
             withCredentials: true,
           },
         );
-        const newToken = resp.data.token;
+        const newAccessToken = resp.data.access_token;
+        const newRefreshToken = resp.data.refresh_token;
 
         // Store new token in cookies
-        setCookie(null, 'token', newToken, { path: '/' });
+        setCookie(null, ACCESS_TOKEN_KEY, newAccessToken, { path: '/' });
+        setCookie(null, REFRESH_TOKEN_KEY, newRefreshToken, { path: '/' });
 
         // Process all queued requests with the new token
-        this.processQueue(null, newToken);
+        this.processQueue(null, newAccessToken);
 
         // Update original request with new token and retry
         originalRequest.headers = originalRequest.headers || {};
-        originalRequest.headers.Authorization = `Bearer ${newToken}`;
+        originalRequest.headers.Authorization = `Bearer ${newAccessToken}`;
         return originalRequest;
       } catch (refreshError) {
         // If refresh fails, clear all tokens and redirect to fallback
         this.processQueue(refreshError, null);
-        destroyCookie(null, 'token');
-        destroyCookie(null, 'refreshToken');
+        destroyCookie(null, ACCESS_TOKEN_KEY);
+        destroyCookie(null, REFRESH_TOKEN_KEY);
         window.location.replace(`${window.location.origin}${fallback}`);
         return;
       } finally {

@@ -1,3 +1,38 @@
-{"/home/ahmad/Desktop/my-turborepo/packages/math/src/add.ts": {"path":"/home/ahmad/Desktop/my-turborepo/packages/math/src/add.ts","statementMap":{"0":{"start":{"line":1,"column":19},"end":{"line":1,"column":null}},"1":{"start":{"line":1,"column":45},"end":{"line":1,"column":null}}},"fnMap":{"0":{"name":"(anonymous_0)","decl":{"start":{"line":1,"column":19},"end":{"line":1,"column":20}},"loc":{"start":{"line":1,"column":45},"end":{"line":1,"column":null}}}},"branchMap":{},"s":{"0":1,"1":1},"f":{"0":1},"b":{}}
-,"/home/ahmad/Desktop/my-turborepo/packages/math/src/subtract.ts": {"path":"/home/ahmad/Desktop/my-turborepo/packages/math/src/subtract.ts","statementMap":{"0":{"start":{"line":1,"column":24},"end":{"line":1,"column":null}},"1":{"start":{"line":1,"column":50},"end":{"line":1,"column":null}}},"fnMap":{"0":{"name":"(anonymous_0)","decl":{"start":{"line":1,"column":24},"end":{"line":1,"column":25}},"loc":{"start":{"line":1,"column":50},"end":{"line":1,"column":null}}}},"branchMap":{},"s":{"0":1,"1":1},"f":{"0":1},"b":{}}
+{
+  "/Users/ahmadsafari/Downloads/my-turborepo/packages/math/src/add.ts": {
+    "path": "/Users/ahmadsafari/Downloads/my-turborepo/packages/math/src/add.ts",
+    "statementMap": {
+      "0": { "start": { "line": 1, "column": 19 }, "end": { "line": 1, "column": null } },
+      "1": { "start": { "line": 1, "column": 45 }, "end": { "line": 1, "column": null } }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": { "start": { "line": 1, "column": 19 }, "end": { "line": 1, "column": 20 } },
+        "loc": { "start": { "line": 1, "column": 45 }, "end": { "line": 1, "column": null } }
+      }
+    },
+    "branchMap": {},
+    "s": { "0": 1, "1": 1 },
+    "f": { "0": 1 },
+    "b": {}
+  },
+  "/Users/ahmadsafari/Downloads/my-turborepo/packages/math/src/subtract.ts": {
+    "path": "/Users/ahmadsafari/Downloads/my-turborepo/packages/math/src/subtract.ts",
+    "statementMap": {
+      "0": { "start": { "line": 1, "column": 24 }, "end": { "line": 1, "column": null } },
+      "1": { "start": { "line": 1, "column": 50 }, "end": { "line": 1, "column": null } }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": { "start": { "line": 1, "column": 24 }, "end": { "line": 1, "column": 25 } },
+        "loc": { "start": { "line": 1, "column": 50 }, "end": { "line": 1, "column": null } }
+      }
+    },
+    "branchMap": {},
+    "s": { "0": 1, "1": 1 },
+    "f": { "0": 1 },
+    "b": {}
+  }
 }
