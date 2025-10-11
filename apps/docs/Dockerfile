@@ -2,39 +2,47 @@
 FROM node:22-alpine AS base
 WORKDIR /app
 RUN corepack enable \
+    && corepack prepare pnpm@latest --activate \
     && apk add --no-cache libc6-compat
 
-# ---- Prune workspace ----
-FROM base AS prune
+# ---- Builder ----
+FROM base AS builder
+WORKDIR /app
+
+# Copy root and app package files
+COPY pnpm-lock.yaml package.json ./
+COPY apps/docs/package.json ./apps/docs/package.json
+
+# Install dependencies
+RUN pnpm install --frozen-lockfile
+
+# Copy all files for build
 COPY . .
-ENV CI=true
-RUN pnpm install --frozen-lockfile
-RUN pnpm turbo prune --scope=docs --docker
 
-# ---- Build stage ----
-FROM base AS build
-# کپی json خروجی prune برای نصب dependencyها
-COPY --from=prune /app/out/json/ .
-ENV CI=true
-RUN pnpm install --frozen-lockfile
+# Build Next.js app as standalone
+RUN pnpm build --filter=docs
 
-# کپی کل source برای build پروژه
-COPY --from=prune /app/out/full/ .
-COPY turbo.json .
-RUN pnpm build --filter=docs...
-
-# ---- Production image ----
+# ---- Runner ----
 FROM node:22-alpine AS runner
 WORKDIR /app
+
+# Enable pnpm
+RUN corepack enable \
+    && corepack prepare pnpm@latest --activate
+
+# Set production environment
 ENV NODE_ENV=production
+ENV PORT=3000
 
-# فقط فایل‌های مورد نیاز برای اجرا
-COPY --from=build /app/apps/docs/.next ./.next
-COPY --from=build /app/apps/docs/public ./public
-COPY --from=build /app/apps/docs/package.json ./package.json
+# Copy standalone build and public assets
+COPY --from=builder /app/apps/docs/.next/standalone/ ./
+COPY --from=builder /app/apps/docs/public ./public
 
-# کپی node_modules production که در build stage تولید شده
-COPY --from=build /app/node_modules ./node_modules
+# Install only production deps for standalone
+COPY --from=builder /app/pnpm-lock.yaml ./
+COPY --from=builder /app/package.json ./
+COPY --from=builder /app/apps/docs/package.json ./apps/docs/package.json
+RUN pnpm install --prod --frozen-lockfile --ignore-scripts
 
 EXPOSE 3000
-CMD ["pnpm", "start"]
+CMD ["node", "apps/docs/server.js"]
