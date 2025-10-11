@@ -2,7 +2,6 @@
 
 import { DehydratedState, HydrationBoundary, QueryClientProvider } from '@tanstack/react-query';
 import type * as React from 'react';
-import { ToastContainer } from 'react-toastify';
 import { queryClient } from 'services/react-query/query-client';
 
 export function ReactQueryProvider({
@@ -14,8 +13,10 @@ export function ReactQueryProvider({
 }) {
   return (
     <QueryClientProvider client={queryClient}>
-      <HydrationBoundary state={dehydratedState}>{children}</HydrationBoundary>
-      <ToastContainer />
+      <HydrationBoundary state={dehydratedState}>{children}
+
+      </HydrationBoundary>
+      
     </QueryClientProvider>
   );
 }

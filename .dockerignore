@@ -1,0 +1,6 @@
+!turbo.json
+!pnpm-lock.yaml
+!package.json
+!pnpm-workspace.yaml
+!apps/**
+!packages/**

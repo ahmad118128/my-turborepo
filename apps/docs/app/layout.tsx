@@ -4,6 +4,7 @@ import './globals.css';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import type { Metadata } from 'next';
 import { Geist } from 'next/font/google';
+import { ToastContainer } from 'react-toastify';
 import { ReactQueryProvider } from 'services/react-query/query-provider';
 
 const geist = Geist({ subsets: ['latin'] });
@@ -17,8 +18,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <ReactQueryProvider>
-        <body className={geist.className}>{children}</body>
-        <ReactQueryDevtools initialIsOpen={false} />
+        <body className={geist.className}>{children}
+
+
+           <ReactQueryDevtools initialIsOpen={false} />
+           <ToastContainer />
+
+        </body>
+       
       </ReactQueryProvider>
     </html>
   );
