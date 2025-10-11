@@ -19,6 +19,7 @@
     },
     "dev": {
       "cache": false,
+      "dependsOn": ["@repo/api-config#build"],
       "persistent": true
     },
     "storybook": {

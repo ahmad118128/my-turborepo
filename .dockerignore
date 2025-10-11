@@ -1,6 +1,50 @@
-!turbo.json
-!pnpm-lock.yaml
-!package.json
-!pnpm-workspace.yaml
-!apps/**
-!packages/**
+# Node modules (dar Dockerfile install mikonim)
+node_modules
+**/node_modules
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts (dar Dockerfile build mikonim)
+.next
+dist
+out
+build
+coverage
+
+# Temp files
+*.tmp
+*.swp
+*.swo
+*.bak
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# IDE / Editor files
+.vscode
+.idea
+*.sublime-workspace
+*.sublime-project
+
+# Turbo / pnpm / lock files (dorost copy mikonim dar Dockerfile)
+.pnpm-store
+.cache
+.vite
+.turbo
+.pnp.*
+
+# Misc
+*.tgz
