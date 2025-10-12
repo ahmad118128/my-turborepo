@@ -1,4 +1,4 @@
-import '@repo/ui/styles.css';
+import '@repo/shared-ui/styles.css';
 import './globals.css';
 
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
@@ -18,14 +18,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <ReactQueryProvider>
-        <body className={geist.className}>{children}
+        <body className={geist.className}>
+          {children}
 
-
-           <ReactQueryDevtools initialIsOpen={false} />
-           <ToastContainer />
-
+          <ReactQueryDevtools initialIsOpen={false} />
+          <ToastContainer />
         </body>
-       
       </ReactQueryProvider>
     </html>
   );

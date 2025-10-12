@@ -1,8 +1,9 @@
-import { Card } from '@repo/ui/card';
-import { Gradient } from '@repo/ui/gradient';
-import { TurborepoLogo } from '@repo/ui/turborepo-logo';
 import UserApiTest from 'components/UserApiTest';
 import Image from 'next/image';
+
+import { Card } from '../../../packages/shared-ui/dist/card';
+import { Gradient } from '../../../packages/shared-ui/dist/gradient';
+import { TurborepoLogo } from '../../../packages/shared-ui/dist/turborepo-logo';
 
 const LINKS = [
   {

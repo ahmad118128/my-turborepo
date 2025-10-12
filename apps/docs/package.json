@@ -17,7 +17,7 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@repo/ui": "workspace:*",
+    "@repo/shared-ui": "workspace:*",
     "@tanstack/react-query": "^5.90.2",
     "axios": "^1.4.0",
     "next": "^15.4.2",
