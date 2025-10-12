@@ -1,2 +1,8 @@
 /* Component-level styles for the UI package */
-@import 'tailwindcss' prefix(ui);
+@import 'tailwindcss';
+@import '@repo/tailwind-config';
+
+/* @theme {
+  --color-primary: #ef4444;
+  --color-secondary: #42030a;
+} */
