@@ -1,6 +1,4 @@
-import './App.css';
-
-import { useState } from 'react';
+import { Button } from '@repo/shared-ui/components/ui/button';
 
 import viteLogo from '/vite.svg';
 
@@ -8,11 +6,9 @@ import reactLogo from './assets/react.svg';
 import ProductsApiTest from './components/ProductsApiTest';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <div>
+      <div className="flex gap-4 p-4">
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -20,15 +16,17 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <hr />
+      <div className="p-4">
+        <p></p>
+        <p>Vite + React + Shared Ui + Tailwindcss 4</p>
+        <Button>Shared Ui Button</Button>
       </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-      <ProductsApiTest />
+      <hr />
+      <div className="p-4">
+        <p>Sample Api call with custom API instance</p>
+        <ProductsApiTest />
+      </div>
     </>
   );
 }

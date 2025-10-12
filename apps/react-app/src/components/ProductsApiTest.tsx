@@ -36,15 +36,11 @@ const ProductsApiTest: React.FC = () => {
         <p>No products found</p>
       ) : (
         <ul>
-          {products.map((product) => {
-            console.log({ product });
-
-            return (
-              <li key={product.id}>
-                {product.title} price:{product.price}
-              </li>
-            );
-          })}
+          {products.map((product) => (
+            <li key={product.id}>
+              {product.title} price:{product.price}
+            </li>
+          ))}
         </ul>
       )}
     </div>
