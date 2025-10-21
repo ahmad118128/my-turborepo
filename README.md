@@ -8,7 +8,7 @@ Run the following command:
 
 ```sh
 ## use node version > 22
-pnpm i
+pnpm i ## if get api-config not find, run pnpm build and after run pnpm i again
 ```
 
 ## What's inside?
