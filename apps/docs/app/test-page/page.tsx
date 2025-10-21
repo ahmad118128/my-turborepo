@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '../../../../packages/shared-ui/dist/button';
+import { Button } from '@repo/shared-ui/components/ui/button';
 
 export default function TestPage() {
   return (

@@ -1,1 +1,1 @@
-{"root":["./src/App.tsx","./src/main.tsx","./src/components/ProductsApiTest.tsx","./src/services/client-api.ts","./src/services/apis/products.service.ts"],"version":"5.9.3"}
+{"root":["./src/app.tsx","./src/main.tsx","./src/components/productsapitest.tsx","./src/services/client-api.ts","./src/services/apis/products.service.ts"],"version":"5.9.3"}
